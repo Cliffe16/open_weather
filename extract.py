@@ -7,20 +7,13 @@ def extract_weather():
 
     # Access the API and check response
     raw_data = requests.get(url)
-    print("Response status code:\n")
-    print(raw_data, "\n")
 
     # Convert data to json
-    print("JSON Data:\n") 
     stg_data = raw_data.json()
-    print(stg_data, "\n")
 
     # Flatten JSON data into a dataframe
     # The data returned containes mixed series i.e dictionaries and lists
-    print("Dataframe:\n")
     data = pd.json_normalize(stg_data)
-    print("---------------------------")
 
-    print(f"Data of type: {type(data)} successfully extracted!")
-    return data
+    return data, stg_data # Both are required for transformation
     
