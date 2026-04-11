@@ -22,7 +22,7 @@ def load_weather():
             status_code INT,--cod
             longitude FLOAT,--coord.lon
             latitude FLOAT,--coord.lat
-            timezone INT,--timezone
+            timezone INTERVAL,--timezone
             temp FLOAT,--main.temp
             temp_feels_like FLOAT,--main.feels_like
             temp_min FLOAT,--main.temp_min
@@ -35,14 +35,14 @@ def load_weather():
             wind_direction INT,--wind.deg
             cloud_percentage INT,--clouds.all
             country TEXT,--sys.country
-            sunrise INT,--sys.sunrise
-            sunset INT,--sys.sunset
+            sunrise TIMESTAMPZ,--sys.sunrise
+            sunset TIMESTAMPZ,--sys.sunset
             weather_id INT,--weather_id
             main_weather TEXT,--weather_main
             weather_description TEXT,--weather_description
             base TEXT,--base
             visibility INT,--visibility
-            time_now INT --dt
+            time_now TIMESTAMPZ --dt
             );
         """
     )
