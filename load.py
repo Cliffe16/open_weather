@@ -35,14 +35,14 @@ def load_weather():
             wind_direction INT,--wind.deg
             cloud_percentage INT,--clouds.all
             country TEXT,--sys.country
-            sunrise TIMESTAMPZ,--sys.sunrise
-            sunset TIMESTAMPZ,--sys.sunset
+            sunrise TIMESTAMPTZ,--sys.sunrise
+            sunset TIMESTAMPTZ,--sys.sunset
             weather_id INT,--weather_id
             main_weather TEXT,--weather_main
             weather_description TEXT,--weather_description
             base TEXT,--base
             visibility INT,--visibility
-            time_now TIMESTAMPZ --dt
+            time_now TIMESTAMPTZ --dt
             );
         """
     )

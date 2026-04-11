@@ -17,7 +17,7 @@ def transform_weather():
     # Convert time columns from integer to timestamps
     time_columns = ['dt', 'sys.sunrise', 'sys.sunset']
     for col in time_columns:
-        transformed_data[col] = pd.to_datetime(transformed[col], unit='s', utc=True)
+        transformed_data[col] = pd.to_datetime(transformed_data[col], unit='s', utc=True)
 
     # Convert timezone column into a timezone
     transformed_data['timezone'] = pd.to_timedelta(transformed_data['timezone'], unit='s')
