@@ -13,6 +13,14 @@ def transform_weather():
 
     # Drop the messy column
     transformed_data = data.drop(columns=['weather'])
-   
+
+    # Convert time columns from integer to timestamps
+    time_columns = ['dt', 'sys.sunrise', 'sys.sunset']
+    for col in time_columns:
+        transformed_data[col] = pd.to_datetime(transformed[col], unit='s', utc=True)
+
+    # Convert timezone column into a timezone
+    transformed_data['timezone'] = pd.to_timedelta(transformed_data['timezone'], unit='s')
+       
 
     return transformed_data
